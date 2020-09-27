@@ -1,0 +1,31 @@
+#include <bits/stdc++.h> 
+
+using namespace std; 
+ 
+//Since the input is guranteed to be a proth number, 
+//all we need to do is to verify if it's a prime number 
+ 
+//Check if proth number is a prime 
+bool isProthPrime(int n) 
+{ 
+    // verify if number is > 1
+    if (n <= 1) 
+        return false; 
+  
+    // Iterate from 2 to the square root of n 
+    for (int i = 2; i * i <= n; i++) 
+        if (n % i == 0) 
+            return false;
+  
+    return true;
+} 
+  
+// Main program
+int main() 
+{ 
+    int prothNum;
+    cin >> prothNum;
+    
+    isProthPrime(prothNum) ? cout << "This number is a Proth Prime\n" : cout << "This number is not a proth Prime\n";
+    return 0; 
+}
